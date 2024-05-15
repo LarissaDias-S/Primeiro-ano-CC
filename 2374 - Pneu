@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+
+    int n;
+    int lido;
+    scanf("%d %d", &n, &lido);
+
+    int dif = n - lido;
+
+    printf("%d\n", dif);
+
+
+    return 0;
+}
