@@ -1,0 +1,41 @@
+#include <stdio.h>
+ 
+int main()
+{
+    int x, y, imp, soma = 0;
+
+    scanf("%d %d", &x, &y);
+
+    if(x > y)
+    {
+
+        for(int i = y + 1; i < x; i++)
+        {
+           imp = (i % 2);
+           if(imp != 0){
+            soma = soma + i;
+           }
+
+        }
+
+        printf("%d\n", soma);
+
+    }
+    else
+    {
+      for(int i = x + 1; i < y; i++)
+        {
+           imp = (i % 2);
+           if(imp != 0){
+            soma = soma + i;
+           }
+
+        }
+
+        printf("%d\n", soma);
+
+
+    }
+
+    return 0;
+}
