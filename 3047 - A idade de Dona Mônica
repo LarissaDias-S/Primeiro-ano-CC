@@ -1,0 +1,26 @@
+#include <stdio.h>
+ 
+int main()
+{
+  int m, a, b, fin;
+
+    scanf("%d\n %d\n %d", &m, &a, &b);
+
+    if ((40 <= m <= 110) & (1 <= a <= m) & (1 <= b <= m) & (a != b)) {
+
+        fin = m - (a+b);
+
+        if(fin > a & fin > b) {
+            printf("%d\n", fin);
+        }
+        else if (a > fin & a > b) {
+            printf("%d\n", a);
+        }
+        else if (b > fin & b > a) {
+            printf("%d\n", b);
+        }
+
+    }
+
+    return 0;
+}
