@@ -1,0 +1,23 @@
+#include <stdio.h>
+ 
+int main()
+{
+    int N, t, v, d=0, dTotal=0;
+
+    scanf("%d", &N);
+
+    for(int i = 1; i <= N; i++)
+    {
+        scanf("%d %d", &t, &v);
+
+        if((t >= 1) && (t <= 100) && (v >= 0) && (v <= 120))
+        {
+           d = t * v;
+           dTotal = dTotal + d;
+        }
+    }
+
+    printf("%d\n", dTotal);
+
+    return 0;
+}
