@@ -1,0 +1,21 @@
+#include <stdio.h>
+ 
+int main()
+{
+    int b, g, conta;
+
+    scanf("%d\n %d", &b, &g);
+
+     conta = (g/2) - b;
+
+     if(( 1 < b < 1000) & (100 < g <1000)) {
+        if(conta <= 0) {
+
+            printf("Amelia tem todas bolinhas!\n");
+        }
+        else {
+            printf("Faltam %d bolinha(s)\n", conta);
+        }
+     }
+    return 0;
+}
