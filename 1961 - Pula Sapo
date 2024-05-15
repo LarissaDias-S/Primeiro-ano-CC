@@ -1,0 +1,38 @@
+#include <stdio.h>
+ 
+int main()
+{
+    int P, N, ac, b=0, menos1, menos2;
+    scanf("%d %d", &P, &N);
+    for(int i = 0; i < N; i++){
+        scanf("%d", &ac);
+
+        menos1 = ac - b;
+        menos2 = b - ac;
+
+        if(b == 0) {
+            b = ac;
+        }
+        else if(ac >= b) {
+        if (menos1 <= P) {
+            b = ac;
+        }
+        }
+        else if(b > ac) {
+        if (menos2 <= P) {
+            b = ac;
+        }
+
+        }
+
+    }
+
+    if(b == ac) {
+        printf("YOU WIN\n");
+    }
+    else {
+        printf("GAME OVER\n");
+    }
+
+    return 0;
+}
