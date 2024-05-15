@@ -1,0 +1,21 @@
+#include <stdio.h>
+ 
+int main()
+{
+    int E, F, C, vaziasTotal, i;
+
+    scanf("%d %d %d", &E, &F, &C);
+
+    vaziasTotal = F + E;
+    i = 0;
+    while(vaziasTotal >= C)
+    {
+        vaziasTotal = vaziasTotal - C;
+        vaziasTotal++;
+        i++;
+    }
+
+    printf("%d\n", i);
+
+    return 0;
+}
