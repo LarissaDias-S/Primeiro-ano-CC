@@ -1,0 +1,35 @@
+#include <stdio.h>
+ 
+int main()
+{
+    int N, X, divisor=0;
+
+    scanf("%d", &N);
+
+    for(int i = 0; i < N; i++)
+    {
+        scanf("%d", &X);
+
+        for(int j = 1; j < X; j++)
+        {
+            if(X % j == 0)
+            {
+                divisor = divisor + j;
+
+            }
+
+        }
+
+        if (divisor == X)
+        {
+            printf("%d eh perfeito\n", X);
+        }
+        else
+        {
+            printf("%d nao eh perfeito\n", X);
+        }
+
+ divisor=0;
+
+    }
+}
