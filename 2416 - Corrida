@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+    int total, c, n;
+
+    scanf("%d %d", &c, &n);
+
+    total = c%n;
+
+    printf("%d\n",total);
+
+    return 0;
+}
