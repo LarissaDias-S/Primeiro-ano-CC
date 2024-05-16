@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <string.h>
+
+int compara(const void* a, const void* b) {
+    char** s1 = (char**) a;
+    char** s2 = (char**) b;
+    return strcmp(*s1, *s2); 
+}
+
+int main() {
+    
+    int i, N;
+    char** livro;
+
+while(scanf("%d", &N) != EOF){
+    
+    //scanf("%d", &N);
+
+    livro = (char**) malloc(N * sizeof(char*));
+
+    for (i = 0; i < N; i++) {
+        livro[i] = (char*) malloc(5 * sizeof(char));
+        scanf("%s", livro[i]);
+    }
+    
+    qsort(livro, N, sizeof(char*), compara);
+
+    for (i = 0; i < N; i++) {
+        printf("%s\n", livro[i]);
+        free(livro[i]);
+    }
+    
+    //printf("\n");
+
+    free(livro);
+}
+
+    return 0;
+}
