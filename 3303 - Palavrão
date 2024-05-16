@@ -1,0 +1,39 @@
+#include <stdio.h>
+ 
+int main()
+{
+   char palavra[20];
+   int palavrao=0;
+
+    scanf("%s", palavra);
+
+
+    for(int i = 0; palavra[i] != '\0'; i++)
+    {
+
+        if(i >= 9)
+        {
+            palavrao = palavrao + i;
+
+        }
+
+    }
+
+
+    if(palavrao != 0)
+    {
+
+        printf("palavrao\n");
+
+
+    }
+    else
+    {
+
+        printf("palavrinha\n");
+
+    }
+
+
+    return 0;
+}
