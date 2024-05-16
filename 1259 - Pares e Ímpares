@@ -1,0 +1,81 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//impares e pares
+
+int compara(const void* a, const void* b)
+{
+    int* n1 = (int*) a;
+    int* n2 = (int*) b;
+    return *n1 - *n2;
+}
+
+ int comparaDecrescente(const void* a, const void* b)
+{
+    int* n1 = (int*) a;
+    int* n2 = (int*) b;
+    return *n2 - *n1;
+}
+
+int main()
+{
+
+    int j=0, k=0, i, N;
+    int *v, *pa, *im;//vetor origem, vetor par e vetor impar
+    
+while(scanf("%d", &N) != EOF){
+
+    v = (int*) malloc(N * sizeof(int));//malloc pois ela tem um numero N de posições
+    pa = (int*) malloc(N * sizeof(int));
+    im = (int*) malloc(N * sizeof(int));
+
+if(v == NULL || pa == NULL|| im == NULL) {
+    printf("Memória Insuficiente\n");
+    exit(1);
+}
+    for(i = 0; i < N; i++)
+    {
+
+        scanf("%d", &v[i]);
+        if(v[i] % 2 == 0)
+        {
+            pa[j] = v[i];
+            j++;
+        }
+        else
+        {
+            im[k]= v[i];
+            k++;
+        }
+    }
+
+    qsort(pa, j, sizeof(int), compara);
+    qsort(im, k, sizeof(int), comparaDecrescente);
+
+    for(i = 0; i < j; i++)
+    {
+      v[i] = pa[i];
+      //free(pa[i]);
+
+
+    }
+
+
+    for(i = 0; i < k; i++)
+    {
+      v[i + j] = im[i];
+     //free(im[i]);
+    }
+    
+    for(i = 0; i < N; i++)
+    {
+      printf("%d\n", v[i]);
+    }
+    
+free(pa);
+free(im);
+free(v);
+}
+
+return 0;
+}
