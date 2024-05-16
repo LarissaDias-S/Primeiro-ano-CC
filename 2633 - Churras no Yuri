@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+//churras
+struct churras
+{
+    int di;
+    char carne[22];
+};
+
+int compara(const void* a, const void* b)
+{
+    struct churras* n1 = (struct churras*) a;
+    struct churras* n2 = (struct churras*) b;
+    return n1->di - n2->di;
+}
+
+int main()
+{
+    int i, N;
+
+
+    while(scanf("%d ",&N) != EOF)
+    {
+      struct churras c[10]; //(struct churras*) malloc(N * sizeof(struct churras));//malloc pois ela tem um numero N de posições
+
+        for(i = 0; i < N; i++)
+        {
+          scanf("%s %d ", c[i].carne, &c[i].di);
+
+        }
+
+         qsort(c, N, sizeof(struct churras), compara);
+
+        for(i = 0; i < N; i++)
+        {
+            if(i)
+            printf(" ");
+            printf("%s", c[i].carne);
+
+        }
+        printf("\n");
+
+       // free(c);
+      memset(c, 0, N*sizeof(c[0]));
+
+    }
+    return 0;
+    
+}
