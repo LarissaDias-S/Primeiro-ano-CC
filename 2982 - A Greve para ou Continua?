@@ -1,0 +1,37 @@
+#include <stdio.h>
+ 
+int main()
+{
+    int N, C, mais=0;
+    char T;
+
+    scanf("%d", &N);
+    for(int i = 0; i < N; i++) {
+
+    scanf(" %c %d", &T, &C);
+
+    if(T == 'V') {
+
+    mais = mais + C;
+
+    }
+    else if(T == 'G') {
+
+    mais = mais - C;
+
+    }
+
+    }
+
+    if(mais >= 0) {
+
+      printf("A greve vai parar.\n");
+
+    }
+    else if(mais < 0){
+
+     printf("NAO VAI TER CORTE, VAI TER LUTA!\n");
+
+    }
+    return 0;
+}
