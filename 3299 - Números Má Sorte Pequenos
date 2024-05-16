@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+int main()
+{
+    char N[19];
+    int mala=0;
+
+    scanf("%s", N);
+
+    for(int i = 0; i < strlen(N); i++)
+    {
+
+        if(N[i] == '1')
+        {
+            i++;
+
+            if(N[i] == '3')
+            {
+                mala = 1;
+
+            }
+        }
+
+    }
+
+    if(mala == 1)
+    {
+        printf("%s es de Mala Suerte\n", N);
+
+    }
+    else
+    {
+
+        printf("%s NO es de Mala Suerte\n", N);
+
+
+    }
+
+
+
+    return 0;
+}
