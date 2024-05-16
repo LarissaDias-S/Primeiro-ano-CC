@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int DIFERENCA(int w, int x, int y, int z) {
+    
+    return (w*x)-(y*z);
+    
+    
+}
+
+
+int main()
+{
+int A, B, C, D;
+
+scanf("%d %d %d %d", &A, &B, &C, &D);
+
+
+printf("DIFERENCA = %d\n", DIFERENCA(A, B, C, D));
+
+    return 0;
+}
