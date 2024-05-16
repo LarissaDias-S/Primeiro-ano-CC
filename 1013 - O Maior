@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <math.h>
+
+int maiorABC(int A, int B, int C) {
+int i=0, AB, ABC;
+
+        AB = (A + B + abs(A - B)) / 2;
+        ABC = (AB + C + abs(AB - C)) / 2;
+
+        return ABC;
+
+}
+
+
+int main()
+{
+    int x, y, z;
+
+    scanf("%d %d %d", &x, &y, &z);
+
+    printf("%d eh o maior\n", maiorABC(x, y, z));
+
+    return 0;
+}
