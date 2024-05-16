@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+
+int main()
+{
+    int N, j=0, k=0;
+    char nome[42], consoante=0;
+
+    scanf("%d", &N);
+
+    for(int i = 0; i < N; i++)
+    {
+        scanf("%s", nome);
+
+
+        for(k=0; k < strlen(nome); k++)
+        {
+           nome[0] = tolower(nome[0]);
+
+            if(nome[k] != 'a' && nome[k] != 'e' && nome[k] != 'i' && nome[k] != 'o' && nome[k] != 'u' && nome[k] != '\0')
+            {
+                k++;
+                if(nome[k] != 'a' && nome[k] != 'e' && nome[k] != 'i' && nome[k] != 'o' && nome[k] != 'u' && nome[k] != '\0')
+                {
+                    k++;
+
+                    if(nome[k] != 'a' && nome[k] != 'e' && nome[k] != 'i' && nome[k] != 'o' && nome[k] != 'u' && nome[k] != '\0')
+                    {
+
+                        consoante += 3;
+
+
+                    }
+
+
+                }
+
+
+
+            }
+
+        }
+
+        nome[0] = toupper(nome[0]);
+
+        if(consoante >= 3)
+        {
+            printf("%s nao eh facil\n", nome);
+
+        }
+        else
+        {
+
+            printf("%s eh facil\n", nome);
+
+        }
+
+        consoante = 0;
+
+    }
+
+
+
+
+
+
+return 0;
+}
