@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+//duendes
+struct duendes
+{
+    int id;
+    char nome[22];
+};
+
+int compara(const void* a, const void* b)
+{
+    struct duendes* n1 = (struct duendes*) a;
+    struct duendes* n2 = (struct duendes*) b;
+    if (n1->id == n2->id) {
+        return strcmp(n1->nome, n2->nome);
+    }
+    return -(n1->id - n2->id);
+}
+
+
+int main()
+{
+    int r=1, l=0, i, N;
+
+
+    while(scanf("%d", &N) != EOF)
+    {
+      struct duendes *d = (struct duendes*) malloc(N * sizeof(struct duendes));//malloc pois ela tem um numero N de posições
+
+        for(i = 0; i < N; i++)
+        {
+          scanf("%s %d", d[i].nome, &d[i].id);
+
+        }
+
+         qsort(d, N, sizeof(struct duendes), compara);
+
+while(r <= N/3){
+
+            printf("Time %d\n", r);
+            printf("%s %d\n",d[l].nome, d[l].id);
+            printf("%s %d\n",d[l + N/3].nome, d[l + N/3].id);
+            printf("%s %d\n",d[l + 2*N/3].nome, d[l + 2*N/3].id);
+            printf("\n");
+        r++;
+        l++;
+}
+
+        free(d);
+    }
+    return 0;
+    
+}
