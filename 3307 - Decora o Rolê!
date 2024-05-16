@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <math.h>
+
+
+int main()
+{
+    int N, area;
+    double r;
+    float cor;
+
+    scanf("%d", &N);
+
+    for(int i = 0; i < N; i++)
+    {
+        scanf("%d", &area);
+
+        r = sqrt(area/(4*3.14));
+
+        if(r < 12)
+        {
+            //vermelho
+            cor = area*0.09;
+            printf("vermelho = R$ %.2f\n", cor);
+        }
+        else if(r <= 15)
+        {
+            //azul
+            cor = area*0.07;
+            printf("azul = R$ %.2f\n", cor);
+
+        }
+        else
+        {
+            //amarelo
+            cor = area*0.05;
+            printf("amarelo = R$ %.2f\n", cor);
+
+        }
+
+    }
+
+
+    return 0;
+}
