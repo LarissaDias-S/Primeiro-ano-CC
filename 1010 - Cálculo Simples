@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int main() {
+ int i, x, y; double z, pagar=0;
+ 
+ for(i=0; i < 2; i++){
+ scanf("%d %d %lf", &x, &y, &z);
+ pagar = pagar + y * z;
+ }
+ 
+ printf("VALOR A PAGAR: R$ %.2lf\n", pagar);
+ 
+ 
+    return 0;
+}
