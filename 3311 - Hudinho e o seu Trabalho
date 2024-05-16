@@ -1,0 +1,40 @@
+#include <stdio.h>
+ 
+//Hundinho e seu trabalho
+
+int compara(const void* a, const void* b)
+{
+    char** s1 = (char**) a;
+    char** s2 = (char**) b;
+    return *s1[0] - *s2[0]; //se for comparar só a primeira letra, "return *s1[0] - *s2[0];"
+}
+//qnd n sei o tamanho *s2 por ex;
+
+int main()
+{
+    int i, N;
+    char** nome; //vetor de uma string
+
+    scanf("%d", &N);
+    nome = (char**) malloc(N * sizeof(char*)); //alocar, pq tem um valor N
+
+    for(i = 0; i < N; i++)
+    {
+        nome[i] = (char*) malloc(31 * sizeof(char)); //criei um número aleatório de max caracteres
+
+        scanf("%s", nome[i]);
+    }
+
+        qsort(nome, N, sizeof(char*), compara);
+
+    for(i = 0; i < N; i++)
+    {
+        printf("%s\n", nome[i]);
+        free(nome[i]);
+
+    }
+
+       free(nome);
+    return 0;
+}
+
