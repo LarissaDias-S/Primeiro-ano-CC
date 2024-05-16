@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+//Larissa Dias da Silva
+
+//van
+struct qalunos
+{
+    char nome[31];//nome de cada aluno
+    char lugar[1];//sigla para o lugar onde ele mora
+    int c;//custo da entrada da cidade até sua casa
+};
+
+struct qalunos qal;
+
+//comparar cada caso em ordem de importancia
+int compara(const void* a, const void* b) {
+
+struct qalunos* p1 = (struct qalunos*) a;
+struct qalunos* p2 = (struct qalunos*) b;
+
+    if (p1->c < p2->c) {
+        return -1;
+    } 
+    else if (p1->c > p2->c) {
+        return 1;
+    } 
+    else if (p1->lugar < p2->lugar) {
+        return strcmp(p1->lugar, p2->lugar);
+    } 
+    else if (p1->lugar > p2->lugar) {
+      return strcmp(p1->lugar, p2->lugar);
+    } 
+    else {
+      return strcmp(p1->nome, p2->nome);
+    }
+}
+
+
+int main()
+{
+    int i, Q; //sendo Q a quantidade de alunos
+
+    while(scanf("%d", &Q) != EOF)
+    {
+struct qalunos *q;
+q = &qal;
+
+q = (struct qalunos*) malloc(Q*sizeof(struct qalunos));
+
+if(q == NULL) {
+    printf("Erro: memoria insuficiente\n");
+    exit(1);
+}
+        for(i = 0; i < Q; i++) {
+
+            scanf("%s %s %d", q[i].nome, q[i].lugar, &q[i].c);
+        }
+
+        qsort(q, Q, sizeof(struct qalunos), compara);
+
+        for(i = 0; i < Q; i++) {
+
+            printf("%s\n", q[i].nome);
+        }
+
+      free(q);
+    }
+
+    return 0;
+
+}
