@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+struct lanches {
+    int cod;
+    float preco;
+    
+    
+};
+int main()
+{
+struct lanches lanches;
+int N;
+
+scanf("%d %d", &lanches.cod, &N);
+
+switch(lanches.cod){
+    case 1:
+    lanches.preco = 4*N;
+    break;
+     case 2:
+    lanches.preco = 4.5*N;
+    break;
+        case 3:
+    lanches.preco = 5*N;
+    break;
+        case 4:
+    lanches.preco = 2*N;
+    break;
+        case 5:
+    lanches.preco = 1.5*N;
+    break;
+    
+}
+
+printf("Total: R$ %.2f\n", lanches.preco);
+
+
+
+    return 0;
+}
