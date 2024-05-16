@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+ struct DDD{
+  int numero;
+  char lugar[100];
+};
+int main()
+{
+
+struct DDD DDD;
+scanf("%d", &DDD.numero);
+
+switch (DDD.numero) {
+
+    case 61:
+        strcpy(DDD.lugar,"Brasilia");
+        break;
+
+    case 71:
+        strcpy(DDD.lugar,"Salvador");
+
+        break;
+
+    case 11:
+     strcpy(DDD.lugar,"Sao Paulo");
+
+        break;
+
+    case 21:
+        strcpy(DDD.lugar,"Rio de Janeiro");
+
+        break;
+
+    case 32:
+       strcpy(DDD.lugar,"Juiz de Fora");
+
+        break;
+    case 19:
+        strcpy(DDD.lugar,"Campinas");
+
+        break;
+
+    case 27:
+       strcpy(DDD.lugar,"Vitoria");
+
+        break;
+    case 31:
+        strcpy(DDD.lugar,"Belo Horizonte");
+
+        break;
+
+    default:
+        strcpy(DDD.lugar,"DDD nao cadastrado");
+     break;
+
+
+}
+
+printf("%s\n", DDD.lugar);
+
+    return 0;
+}
