@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main()
+{
+    char O;//operação, SOMA ou MEDIA;
+    double M[12][12], soma=0, contador=0, osDois;
+
+    scanf("%c", &O);
+
+    for(int i = 0; i < 12; i++)//linha
+    {
+        for(int j = 0; j < 12; j++)//coluna
+        {
+            scanf("%lf", &M[i][j]);
+
+            osDois = i + j;
+            if(osDois <= 10 && i > j) {
+
+                soma = M[i][j] + soma;
+                contador++;
+
+            }
+        }
+    }
+//valor da coluna sempre maior do que da linha
+//a soma de cada linha e coluna é menor ou igual a 10
+
+
+if(O == 'S') {
+
+    printf("%.1lf\n", soma);
+   }
+
+   else if(O == 'M') {
+
+    printf("%.1lf\n", soma/contador);
+
+   }
+
+
+    return 0;
+}
