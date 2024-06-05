@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+int N, i;
+int v[7];
+int copia[7] = {100, 50, 20, 10, 5, 2, 1};
+
+
+scanf("%d", &N);
+printf("%d\n", N);
+
+
+     for(i=0; i < 7; i++){
+        
+        v[i] = N/copia[i];
+        N = N - (copia[i] * v[i]);
+        
+    }
+
+     
+for(int i=0; i < 7; i++) {
+    
+    printf("%d nota(s) de R$ %d,00\n", v[i], copia[i]);
+
+    
+}
+ 
+    return 0;
+}
