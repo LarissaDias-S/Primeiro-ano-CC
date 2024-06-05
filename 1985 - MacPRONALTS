@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+double funcao(int a, int b){
+double total;
+    switch(a){
+    case 1001:
+     total = 1.50 * b; break;
+    case 1002:
+     total = 2.50 * b; break;
+    case 1003:
+     total = 3.50 * b; break;
+    case 1004:
+     total = 4.50 * b; break;
+    case 1005:
+     total = 5.50 * b; break;
+    default:
+     total = 0; break;
+    }
+return total;
+}
+
+
+
+int main() {
+int n, i, x, y; double h;
+
+scanf("%d", &n);
+
+for(i=0; i < n; i++){
+scanf("%d %d", &x, &y);
+
+h += funcao(x, y);
+}
+
+printf("%.2lf\n", h);
+
+
+    return 0;
+}
