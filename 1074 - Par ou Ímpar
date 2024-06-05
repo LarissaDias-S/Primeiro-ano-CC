@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+ 
+ 
+int main() {
+ int *v;
+ int N, i;
+ 
+ 
+ scanf("%d", &N);
+ 
+v = (int*) malloc(N * sizeof(int));
+ 
+for(i=0; i < N; i++) {
+    
+    scanf("%d", &v[i]);
+
+        if(v[i] % 2 == 0 && v[i] > 0) {
+            
+                printf("EVEN POSITIVE\n");
+
+            
+        }
+        
+        else if(v[i] % 2 == 0 && v[i] < 0){
+            
+           printf("EVEN NEGATIVE\n");
+        }
+        
+        else if(v[i] % 2 != 0 && v[i] > 0){
+            
+                printf("ODD POSITIVE\n");
+
+        }
+        else if(v[i] % 2 != 0 && v[i] < 0){
+            
+             printf("ODD NEGATIVE\n");
+        }
+        
+        else{
+            
+             printf("NULL\n");
+
+        }
+
+}
+
+
+
+free(v);
+
+    return 0;
+}
