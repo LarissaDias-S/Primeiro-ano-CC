@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int main() {
+ int t, v, dist; //tempo gasto e velocidade media
+ double total;
+ 
+scanf("%d %d", &t, &v); 
+
+ dist = v * t;
+ 
+ total = dist/12.0;
+ 
+ printf("%.3lf\n", total);
+ 
+    return 0;
+}
