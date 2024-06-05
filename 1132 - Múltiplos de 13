@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int soma(int A, int B) {
+    int i, j=0; //j é a soma
+    
+      if (B > A){
+
+      for (i = A; i <= B; i++){
+      
+      if(i % 13 != 0){
+          
+          j += i;
+          
+      }
+
+	}
+	
+    }
+    
+  else{
+      
+      for (i = B; i <= A; i++){
+
+      if(i % 13 != 0){
+          
+          j += i;
+          
+      }
+
+	}
+
+    }
+    return j;
+}
+
+
+int
+main ()
+{
+  int X, Y; 
+  
+ scanf("%d %d", &X, &Y);
+ 
+printf("%d\n", soma(X, Y));
+    
+    return 0;
+    
+}
