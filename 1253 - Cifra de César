@@ -1,0 +1,47 @@
+#include <stdio.h>
+ 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+
+int main()
+{
+char letras[51]; int N, k;
+    
+scanf("%d", &N);
+
+for(int j=0; j < N; j++){
+
+scanf("%s", letras);
+scanf("%d", &k);
+//scanf("%*c");
+
+ 
+for(int i=0; i < strlen(letras); i++) {
+
+  if(letras[i] >= 'A' && letras[i] <= 'Z'){
+
+    letras[i] = letras[i] - k;
+
+    if(letras[i] > 'Z') {
+
+        letras[i] = letras[i] - 26;
+
+    }
+    
+ if(letras[i] < 'A') {
+
+        letras[i] = letras[i] + 26;
+
+    }
+   }
+}
+printf("%s\n", letras);
+}
+
+
+    return 0;
+
+}
