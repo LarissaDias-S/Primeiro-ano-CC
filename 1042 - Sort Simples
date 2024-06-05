@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int compara(const void* a, const void* b) {
+    
+    int* n1 = (int*) a;
+    int* n2 = (int*) b;
+    
+    return *n1 - *n2;
+}
+ 
+ 
+ 
+int main() {
+ 
+int x[3], v[3], i;
+
+for(i=0; i < 3; i++) {
+    
+    scanf("%d", &x[i]);
+    
+    v[i] = x[i];
+    
+}
+
+qsort(x, 3, sizeof(int), compara);
+
+for(i=0; i < 3; i++) {
+    
+    printf("%d\n", x[i]);
+    
+}
+printf("\n");
+
+for(i=0; i < 3; i++) {
+    
+    printf("%d\n", v[i]);
+    
+}
+
+ 
+    return 0;
+}
