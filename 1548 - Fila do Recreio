@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int compara(const void* a, const void* b) {
+    
+    int* n1 = (int*) a;
+    int* n2 = (int*) b;
+    
+    return - (*n1 - *n2);
+    
+}
+
+
+int main(){
+int N, M, *pi, *vi, i, j, cont;
+
+    scanf("%d", &N);
+for(i=0; i < N; i++){
+    cont=0;
+    scanf("%d", &M);
+pi = (int*) malloc (M * sizeof(int));
+vi = (int*) malloc (M * sizeof(int));
+    for(j=0; j < M; j++){
+    scanf("%d", &pi[j]);
+    vi[j] = pi[j];
+}
+qsort(pi, M, sizeof(int), compara);
+
+for(j=0; j < M; j++){
+
+    if(vi[j] == pi[j]){
+        
+       cont++; 
+    }
+}
+    printf("%d\n", cont);
+
+free(pi);
+}
+    return 0;
+}
