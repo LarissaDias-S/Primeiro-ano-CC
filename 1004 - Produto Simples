@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int prod(int x, int y){
+    
+    return x * y;
+}
+ 
+ 
+int main() {
+int a, b;
+
+scanf("%d %d", &a, &b);
+
+printf("PROD = %d\n", prod(a, b));
+
+    return 0;
+}
