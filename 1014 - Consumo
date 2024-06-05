@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+double di(int A, double B) {
+     
+    return A/B;
+     
+ }
+ 
+ 
+int main() {
+ int X;
+ double Y;
+ 
+ scanf("%d %lf", &X, &Y);
+ 
+ printf("%.3lf km/l\n", di(X, Y));
+
+    return 0;
+}
