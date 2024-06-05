@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+ 
+double esfera(double r){
+    
+    return (4/3.0) * 3.14159 * (r * r * r);
+}
+
+ 
+ 
+int main() {
+ double raio;
+ scanf("%lf", &raio);
+ 
+ printf("VOLUME = %.3lf\n", esfera(raio));
+ 
+    return 0;
+}
