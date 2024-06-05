@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main()
+{    int a, b; double c;//número, quantidade de horas trabalhadas e o valor que o funcionário recebe cd hora
+    
+    scanf("%d %d %lf", &a, &b, &c);
+    
+    printf("NUMBER = %d\nSALARY = U$ %.2lf\n", a, b*c);
+    
+    
+    return 0;
+}
