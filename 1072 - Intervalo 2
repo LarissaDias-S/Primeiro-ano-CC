@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int main() {
+ int i, n, *x, in=0, out=0; 
+ 
+ scanf("%d", &n);
+ 
+ x = (int*) malloc(n * sizeof(int));
+ 
+ for(i=0; i < n; i++){
+     
+     scanf("%d", &x[i]);
+     
+     if(x[i] >= 10 && x[i] <= 20){
+         
+         in++;
+         
+     }
+     else{
+         out++;
+     }
+ }
+ 
+ printf("%d in\n%d out\n", in, out);
+ 
+ free(x);
+    return 0;
+}
