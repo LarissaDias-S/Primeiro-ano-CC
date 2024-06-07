@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int main() {
+int i, j, c, cont=0; double soma=0.0, m[12][12]; char t;
+
+scanf("%d", &c);
+scanf(" %c", &t);
+
+for(i=0; i < 12; i++){
+    for(j=0; j < 12; j++){
+        
+        scanf("%lf", &m[i][j]);
+        
+        if(j == c){
+            soma += m[i][j];
+            cont++;
+        }
+    }
+}
+
+if(t == 'S'){
+    printf("%.1lf\n", soma);
+}
+
+else if(t == 'M'){
+    printf("%.1lf\n", (soma/cont)); 
+}
+
+
+
+    return 0;
+}
