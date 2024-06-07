@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int main() {
+ int n, i, cont; double c;
+ 
+ scanf("%d", &n);
+ 
+ for(i=0; i < n; i++){
+     cont=0;
+     scanf("%lf", &c);
+     
+     while(c > 1.0){
+         
+         c *= 0.5;
+         
+         cont++;
+         
+     }
+     
+     printf("%d dias\n", cont);
+ }
+ 
+ 
+    return 0;
+}
