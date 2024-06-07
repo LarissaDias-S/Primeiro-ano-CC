@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int main() {
+int l, i, v, maisv;
+
+
+while(scanf("%d", &l) != EOF){
+    maisv=0;
+    
+  for(i=0; i < l; i++){
+      
+      scanf("%d", &v);
+      
+      if(v > maisv){
+          
+          maisv = v;
+      }
+      
+  }  
+  
+  if(maisv < 10){
+      
+      printf("1\n");
+  }
+  else if(maisv >= 10 && maisv < 20){
+      
+      printf("2\n");
+  }
+  else if(maisv >= 20) {
+      
+      printf("3\n");
+  }
+    
+    
+}
+    return 0;
+}
