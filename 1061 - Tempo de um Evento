@@ -1,0 +1,22 @@
+#include <stdio.h>
+ 
+int main() {
+ int dia, dia2, h, m, s, h2, m2, s2, totals, totald, totalh, totalm, news; char d[4], pontos;
+ 
+ scanf("%s %d", d, &dia);
+ scanf("%d %c %d %c %d", &h, &pontos, &m, &pontos, &s);
+ 
+ scanf("%s %d", d, &dia2);
+ scanf("%d %c %d %c %d", &h2, &pontos, &m2, &pontos, &s2);
+
+ totals = (dia2 - dia - 1)*86400 + (23 - h)*3600 + h2*3600 + (59 - m)*60 + m2*60 + (60 - s) + s2;
+ 
+ totald = totals/86400; 
+ totalh = (totals - (86400*totald))/3600; 
+ totalm = (totals - (86400*totald)-(3600*totalh))/60;
+ news = (totals - (86400*totald)-(3600*totalh)-(totalm*60));
+ 
+ printf("%d dia(s)\n%d hora(s)\n%d minuto(s)\n%d segundo(s)\n", totald, totalh, totalm, news);
+ 
+    return 0;
+}
