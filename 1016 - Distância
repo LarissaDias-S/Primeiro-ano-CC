@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int main() {
+ int d, total;
+ 
+ scanf("%d", &d);
+ 
+ total = (60*d)/30;
+ 
+ printf("%d minutos\n", total);
+
+    return 0;
+}
