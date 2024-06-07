@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int
+main ()
+{
+  int *x, n, i, cont;
+
+  scanf ("%d", &n);
+
+  x = (int *) malloc (n * sizeof (int));
+
+  for (i = 0; i < n; i++)
+    {
+    cont=0;
+
+      scanf ("%d", &x[i]);
+      
+
+      for (int j = 2; j <= (x[i] / 2); j++)
+	{
+	    if((x[i] % j) == 0){
+	        cont++;
+	    }
+	}
+	
+	  if (cont==0)
+	    {
+	      printf ("%d eh primo\n", x[i]);
+	    }
+
+	  else
+	    {
+	      printf ("%d nao eh primo\n", x[i]);
+	    }
+	
+    }
+
+
+
+
+  return 0;
+}
