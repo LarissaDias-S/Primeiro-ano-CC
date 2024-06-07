@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+ 
+void checar_e_printar(double x, double y){
+    
+    if(x==0.0 && y==0.0){
+        
+        printf("Origem\n");
+    }
+    else if(x==0.0){
+        
+        printf("Eixo Y\n");
+
+        
+    }
+     else if(y==0.0){
+        
+        printf("Eixo X\n");
+        
+    }
+    else if(x > 0.0 && y > 0.0){
+        
+        printf("Q1\n");
+        
+    }
+   else if(x < 0.0 && y > 0.0){
+        
+        printf("Q2\n");
+        
+    }
+   else if(x < 0.0 && y < 0.0){
+        
+        printf("Q3\n");
+        
+    }
+   else if(x > 0.0 && y < 0.0){
+        
+        printf("Q4\n");
+        
+    }
+    
+}
+ 
+ 
+int main() {
+ double x, y;
+ scanf("%lf %lf", &x, &y);
+ 
+ checar_e_printar(x, y);
+ 
+    return 0;
+}
