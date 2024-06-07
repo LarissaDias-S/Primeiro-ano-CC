@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <stdlib.h>
+ 
+void resto(int a, int b){
+    int i, j=0, *v;
+    
+    if(a < b){
+        v = (int*) malloc(b * sizeof(int));
+        
+        for(i=a; i < b; i++){
+            
+            if((i % 5 == 2) || (i % 5 == 3)){
+               if(i != a && i != b){
+
+                v[j] = i;
+                j++;
+               }
+            }
+            
+        }
+        
+    for(i=0; i < j; i++){
+        printf("%d\n", v[i]);
+        
+        }
+    
+            free(v);
+    }
+    else{
+        v = (int*) malloc(a * sizeof(int));
+        
+         for(i=b; i < a; i++){
+            
+            if((i % 5 == 2) || (i % 5 == 3)){
+                if(i != a && i != b){
+                v[j] = i;
+                j++;
+                }
+                
+            }
+            
+        }
+        
+        for(i=0; i < j; i++){
+        printf("%d\n", v[i]);
+        
+        }
+        free(v);
+    }
+
+}
+ 
+ 
+ 
+int main() {
+ int X, Y;
+ 
+ scanf("%d %d", &X, &Y);
+ 
+ resto(X, Y);
+ 
+    return 0;
+}
