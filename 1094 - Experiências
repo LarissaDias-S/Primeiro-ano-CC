@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+struct teste{
+  int quantia; //quantidade de cobaias
+  char tipo; //C, R ou S
+};
+ 
+int main() {
+ int N, i, c=0, r=0, s=0, total=0; //casos teste
+ double pc, pr, ps;
+ 
+ scanf("%d", &N);
+ 
+ struct teste *t = (struct teste*) malloc(N * sizeof(struct teste));
+ 
+ for(i=0; i < N; i++){
+     
+     scanf("%d %c", &t[i].quantia, &t[i].tipo);
+     
+     if(t[i].tipo == 'C'){
+         c += t[i].quantia;
+     }
+     else if(t[i].tipo == 'R'){
+         r += t[i].quantia;
+
+     }
+      else if(t[i].tipo == 'S'){
+         s += t[i].quantia;
+
+     }
+     
+     total += t[i].quantia; 
+ }
+ pc = (c * 100.00)/total;
+ pr = (r * 100.00)/total; ps = (s * 100.00)/total;
+ 
+ printf("Total: %d cobaias\nTotal de coelhos: %d\nTotal de ratos: %d\nTotal de sapos: %d\nPercentual de coelhos: %.2lf %\nPercentual de ratos: %.2lf %\nPercentual de sapos: %.2lf %\n", total, c, r, s, pc, pr, ps);
+ 
+ free(t);
+ 
+    return 0;
+}
