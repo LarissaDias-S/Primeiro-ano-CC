@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int
+compara (const void *a, const void *b)
+{
+
+  int *n1 = (int *) a;
+  int *n2 = (int *) b;
+
+  return *n1 - *n2;
+}
+
+int
+main ()
+{
+  int *x, n, i, cont = 1;
+
+  scanf ("%d", &n);
+
+  x = (int *) malloc (n * sizeof (int));
+
+  for (i = 0; i < n; i++)
+    {
+
+      scanf ("%d", &x[i]);
+
+    }
+
+  qsort (x, n, sizeof (int), compara);
+
+  for (i = 1; i <= n; i++)
+    {
+
+      if (x[i] == x[i - 1])
+	{
+
+	  cont++;
+	}
+
+      else
+	{
+	  printf ("%d aparece %d vez(es)\n", x[i - 1], cont);
+	  cont = 1;
+	}
+    }
+
+  free (x);
+  return 0;
+}
