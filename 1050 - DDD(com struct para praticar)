@@ -1,0 +1,79 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+typedef struct{
+    int ddd;
+    char cidade[20];
+}discagem;
+
+discagem *alocar(discagem *d, int n){
+d = (discagem*) malloc(n * sizeof(discagem));
+
+return d;
+}
+
+discagem *func(discagem *d){
+    
+    d[0].ddd = 61;
+    strcpy(d[0].cidade, "Brasilia");
+    
+    d[1].ddd = 71;
+    strcpy(d[1].cidade, "Salvador");
+    
+    d[2].ddd = 11;
+    strcpy(d[2].cidade, "Sao Paulo");
+    
+    d[3].ddd = 21;
+    strcpy(d[3].cidade, "Rio de Janeiro");
+    
+    d[4].ddd = 32;
+    strcpy(d[4].cidade, "Juiz de Fora");
+    
+    d[5].ddd = 19;
+    strcpy(d[5].cidade, "Campinas");
+    
+    d[6].ddd = 27;
+    strcpy(d[6].cidade, "Vitoria");
+    
+    d[7].ddd = 31;
+    strcpy(d[7].cidade, "Belo Horizonte");
+    
+    strcpy(d[8].cidade, "DDD nao cadastrado");
+    
+    return d;
+}
+
+void liberar(discagem *d){
+    free(d);
+}
+ 
+int main() {
+discagem *d; int i, dedede, n=9, cont=0;
+
+scanf("%d", &dedede);
+
+d = alocar(d, n);
+
+d = func(d);
+
+
+for(i=0; i < n; i++){
+    
+if(d[i].ddd == dedede){
+    printf("%s\n", d[i].cidade);
+    cont++;
+}
+
+}
+if(cont == 0){
+    printf("%s\n", d[8].cidade);
+}
+
+
+
+liberar(d);
+
+    return 0;
+}
