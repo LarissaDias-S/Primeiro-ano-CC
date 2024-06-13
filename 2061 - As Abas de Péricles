@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+ 
+int main() {
+int n, m, i; char fc[7];
+
+scanf("%d %d", &n, &m);
+
+for(i=0; i < m; i++){
+    scanf("%s", fc);
+    
+    if(strcmp(fc, "fechou") == 0){
+        
+        n++;
+    }
+    else if(strcmp(fc, "clicou") == 0){
+      
+       n--;  
+    }
+}
+
+printf("%d\n", n);
+ 
+    return 0;
+}
