@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int
+main ()
+{
+  float n, corte1, corte2, taxa1, taxa2, taxa3;
+  
+  scanf ("%f", &n);
+
+
+  if (n > 2000.00)
+    {
+    corte1 = n - 2000.00;
+    
+    if(corte1 > 2500.00){
+        taxa1 = 1000.00 * 0.08;
+        taxa2 = 1500.00 * 0.18;
+        corte2 = corte1 - 2500.00;
+        taxa3 = corte2 * 0.28;
+        
+        printf("R$ %.2f\n", taxa1 + taxa2 + taxa3);
+        
+    }
+    else if(corte1 > 1000.00){
+        taxa1 = 1000.00 * 0.08;
+        corte2 = corte1 - 1000.00;
+        taxa2 = corte2 * 0.18;
+
+        printf("R$ %.2f\n", taxa1 + taxa2);
+    }
+    else{
+        
+        printf("R$ %.2f\n", corte1 * 0.08);
+    }
+     
+
+    }
+    
+    
+  else
+    {
+      printf ("Isento\n");
+    }
+
+
+  return 0;
+}
