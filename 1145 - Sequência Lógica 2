@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int main() {
+int i=1, x, y;
+
+scanf("%d %d", &x, &y);
+
+while(i <= y){
+    
+    if(i % x == 0){
+       
+       printf("%d\n", i); 
+    }
+    else{
+        
+    printf("%d ", i);
+    
+    }
+    
+    i++;
+
+}
+
+ 
+    return 0;
+}
