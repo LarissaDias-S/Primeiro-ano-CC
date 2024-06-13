@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int main() {
+ int n, i, t, menorti=21, menori;
+ 
+ scanf("%d", &n);
+ 
+ for(i=1; i <= n; i++){
+     scanf("%d", &t);
+     
+     if(t < menorti){
+         menorti = t;
+         
+         menori = i;
+     }
+     
+ }
+ 
+ printf("%d\n", menori);
+ 
+
+    return 0;
+}
