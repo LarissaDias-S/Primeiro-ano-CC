@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int main() {
+ double a, b, aumento;
+ 
+ scanf("%lf %lf", &a, &b);
+ 
+ aumento = b - a;
+ 
+ printf("%.2lf%\n", (100.00 * aumento)/a);
+ 
+ 
+ 
+    return 0;
+}
